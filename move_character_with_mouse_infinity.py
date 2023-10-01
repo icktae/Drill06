@@ -23,6 +23,10 @@ def handle_events():
             running = False
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
+        elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
+            click_marker_x = event.x
+            click_marker_y = event.y
+            click_marker.append((click_marker_x, click_marker_y, False))
 
 # 캐릭터 형상 변환 함수
 def character_image(z) :
@@ -36,8 +40,12 @@ x = 1280 // 2
 y = 1024 // 2
 frame = 0
 
+click_marker = []
+click_marker_x = x
+click_marker_y = y
+
 while running :
-    pass
+
 
     update_canvas()
     handle_events()
