@@ -54,6 +54,18 @@ while running :
         if not arrive:
             hand_arrow.draw(pos_x, pos_y)
 
+        # 캐릭터 이동
+    if len(click_marker) > 0:
+        click_marker_x, click_marker_y, arrive = click_marker[0]
+        dx = click_marker_x - x
+        dy = click_marker_y - y
+        move_distance = distance(x, y, click_marker_x, click_marker_y)
+
+        if move_distance > 0:
+            speed = 10
+            x += (dx / move_distance) * speed
+            y += (dy / move_distance) * speed
+
         character_image(100)
 
     update_canvas()
