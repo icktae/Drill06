@@ -70,7 +70,12 @@ while running :
             click_marker.pop(0)
             arrive = True
 
-        character_image(100)
+        # 캐릭터 방향
+        if x > click_marker_x:
+            character_image(0)
+
+        elif x < click_marker_x:
+            character_image(100)
 
     update_canvas()
     handle_events()
