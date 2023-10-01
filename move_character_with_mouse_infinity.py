@@ -25,7 +25,7 @@ def handle_events():
             running = False
         elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
             click_marker_x = event.x
-            click_marker_y = event.y
+            click_marker_y = TUK_HEIGHT - event.y
             click_marker.append((click_marker_x, click_marker_y, False))
 
 # 캐릭터 형상 변환 함수
