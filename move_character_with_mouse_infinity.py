@@ -1,6 +1,6 @@
 from pico2d import *
 import math
-import random
+
 
 TUK_WIDTH, TUK_HEIGHT = 1280, 1024
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
@@ -16,13 +16,15 @@ def handle_events():
     global click_marker_x
     global click_marker_y
 
-    # ESC 탈출
+
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
             running = False
+        # ESC 탈출
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
+        # 마우스 클릭
         elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
             click_marker_x = event.x
             click_marker_y = TUK_HEIGHT - event.y
@@ -54,7 +56,7 @@ while running :
         if not arrive:
             hand_arrow.draw(pos_x, pos_y)
 
-        # 캐릭터 이동
+    # 캐릭터 이동
     if len(click_marker) > 0:
         click_marker_x, click_marker_y, arrive = click_marker[0]
         dx = click_marker_x - x
