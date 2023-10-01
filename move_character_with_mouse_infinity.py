@@ -77,6 +77,11 @@ while running :
         elif x < click_marker_x:
             character_image(100)
 
+        if arrive:
+            x = click_marker_x
+
+    else:
+        character_image(300)
     update_canvas()
     handle_events()
     frame = (frame + 1) % 8
