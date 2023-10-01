@@ -66,6 +66,10 @@ while running :
             x += (dx / move_distance) * speed
             y += (dy / move_distance) * speed
 
+        if move_distance < 10:
+            click_marker.pop(0)
+            arrive = True
+
         character_image(100)
 
     update_canvas()
