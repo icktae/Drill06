@@ -12,6 +12,9 @@ def handle_events():
     global running
     global x
     global y
+    global click_marker
+    global click_marker_x
+    global click_marker_y
 
     # ESC 탈출
     events = get_events()
@@ -25,7 +28,7 @@ def handle_events():
 def character_image(z) :
     character.clip_draw(frame * 100, z, 100, 100, x, y)
 
-def character_move(pass) :
+def character_move() :
     pass
 
 running = True
